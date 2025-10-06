@@ -58,4 +58,4 @@ Out: `Como se vê na imagem seguinte: <img src="http://www.coellho.com" alt="ima
 
 ## Solução:
 
-[Conversor de Markdown para html](TPC2..py)
+[Conversor de Markdown para html](TPC2.py)
