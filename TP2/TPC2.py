@@ -1,4 +1,5 @@
 import re
+import sys
 
 def markdown_para_html(texto):
     linhas = texto.split('\n')
@@ -7,59 +8,45 @@ def markdown_para_html(texto):
 
     for linha in linhas:
         linha = linha.strip()
+        if not linha:
+            continue
 
-        # Cabeçalhos
-        if linha.startswith('### '):
-            resultado.append(f"<h3>{linha[4:]}</h3>")
-        elif linha.startswith('## '):
-            resultado.append(f"<h2>{linha[3:]}</h2>")
-        elif linha.startswith('# '):
-            resultado.append(f"<h1>{linha[2:]}</h1>")
-        
-        # Lista numerada
-        elif re.match(r'^\d+\.\s', linha):
+        cabecalho = re.match(r'^(#{1,3})\s+(.*)', linha)
+        if cabecalho:
+            nivel = len(cabecalho.group(1))
+            conteudo = cabecalho.group(2)
+            resultado.append(f"<h{nivel}>{conteudo}</h{nivel}>")
+            continue
+
+        if re.match(r'^\d+\.\s', linha):
             if not lista_ativa:
                 resultado.append("<ol>")
                 lista_ativa = True
             item = re.sub(r'^\d+\.\s', '', linha)
-            resultado.append(f"<li>{item}</li>")
         else:
             if lista_ativa:
                 resultado.append("</ol>")
                 lista_ativa = False
-            # Bold
-            linha = re.sub(r'\*\*(.*?)\*\*', r'<b>\1</b>', linha)
-            # Itálico
-            linha = re.sub(r'\*(.*?)\*', r'<i>\1</i>', linha)
-            # Link
-            linha = re.sub(r'\[(.*?)\]\((.*?)\)', r'<a href="\2">\1</a>', linha)
-            # Imagem
-            linha = re.sub(r'!\[(.*?)\]\((.*?)\)', r'<img src="\2" alt="\1"/>', linha)
+            item = linha
 
-            if linha:
-                resultado.append(linha)
+        item = re.sub(r'!\[(.*?)\]\((.*?)\)', r'<img src="\2" alt="\1"/>', item)
 
-    # Fechar lista caso o texto termine com ela
+        item = re.sub(r'\[(.*?)\]\((.*?)\)', r'<a href="\2">\1</a>', item)
+
+        item = re.sub(r'\*\*(.*?)\*\*', r'<b>\1</b>', item)
+
+        item = re.sub(r'\*(.*?)\*', r'<i>\1</i>', item)
+
+        if re.match(r'^\d+\.\s', linha):
+            resultado.append(f"<li>{item}</li>")
+        else:
+            resultado.append(item)
+
     if lista_ativa:
         resultado.append("</ol>")
 
     return '\n'.join(resultado)
 
-
-# Exemplo de uso
-md_texto = """
-# Exemplo de Cabeçalho
-
-Este é um **texto em negrito** e um *texto em itálico*.
-
-1. Primeiro item
-2. Segundo item
-3. Terceiro item
-
-Como pode ser consultado em [página da UC](http://www.uc.pt)
-
-Como se vê na imagem seguinte: ![imagem dum coelho](http://www.coellho.com)
-"""
-
-html = markdown_para_html(md_texto)
+entrada = sys.stdin.read()
+html = markdown_para_html(entrada)
 print(html)
