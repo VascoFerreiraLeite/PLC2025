@@ -1,9 +1,9 @@
-## TP1 PLC
+## TP2 PLC
 Autor: Vasco Ferreira Leite, A108399
 
 <img width="160" height="160" alt="image" src="https://github.com/user-attachments/assets/11b11f3a-8b42-4034-a669-ddf58d121b79" />
 
-## TPC3: Conversor de MarkDown para HTML
+## TPC2: Conversor de MarkDown para HTML
 
 Criar em Python um pequeno conversor de MarkDown para HTML para os elementos descritos na "Basic Syntax" da Cheat Sheet:
 
