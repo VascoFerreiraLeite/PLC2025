@@ -6,7 +6,7 @@ Repositório dedicado aos **Trabalhos De Casa (TPCs)** da unidade curricular de 
 
 ## Informações do Aluno
 
-| ![Foto do Aluno](link_da_tua_foto_aqui) | **Nome:** Vasco Ferreira Leite <br> **Número:** A108399 |
+| ![Foto do Aluno](https://github.com/user-attachments/assets/11b11f3a-8b42-4034-a669-ddf58d121b79) | **Nome:** Vasco Ferreira Leite <br> **Número:** A108399 |
 |:--:|:--|
 
 ---
