@@ -291,12 +291,6 @@ Para aceder a um array, o gerador coloca o endereço base e o valor do índice i
 
 A VM fornece a instrução read, que lê sempre uma sequência de caracteres (string) do input. É emitida a instrução read para colocar a string lida na pilha, se este for Integer, então usa-se atoi para tornar a string no valor númerico correspondente. Para a escrita, usa-se a instrução write que, conforme as suas variações (writei para tipo INTEGER, writef para tipo REAL, writes para tipo STRING), escreve o que for necessário. Usa-se writeln para quebra linha.
 
-Aqui tens uma sugestão de como podes formatar essa secção no relatório. A ideia é mostrar o "antes" e o "depois" lado a lado (ou sequencialmente) e dar uma mini-explicação do que aconteceu.
-
-Podes colar isto logo a seguir à secção onde explicaste o `codeGen.py` ou na secção de "Resultados".
-
----
-
 ## Exemplo Prático de Geração de Código
 
 Para demonstrar o funcionamento do compilador, apresentamos abaixo a compilação do algoritmo de cálculo do **Fatorial**. Este exemplo ilustra a tradução de declarações de variáveis, input/output e ciclos `For`.
@@ -396,4 +390,3 @@ Através da utilização da linguagem **Python** e da biblioteca **PLY**, implem
 3. **Geração de Código:** Tradução eficaz das estruturas de controlo (`if`, `while`, `for`), manipulação de arrays e suporte a subprogramas (funções).
 
 Os testes realizados com algoritmos clássicos, como o cálculo do Fatorial, a série de Fibonacci e o Bubble Sort, demonstraram que o compilador gera código correto e funcional. Este trabalho permitiu-nos consolidar os conhecimentos teóricos sobre o funcionamento interno de compiladores, especialmente no que toca à gestão de memória, recursividade e à importância de uma análise semântica rigorosa para a prevenção de erros.
-
