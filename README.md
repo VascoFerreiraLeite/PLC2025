@@ -14,7 +14,7 @@ Repositório dedicado aos **Trabalhos De Casa (TPCs)** e ao projeto da unidade c
 
 Este projeto consiste no desenvolvimento de um compilador para a linguagem Pascal standard. O compilador realiza a análise léxica, sintática e semântica, e gera como resultado código semelhante a assembly para a [Máquina Virtual](https://ewvm.epl.di.uminho.pt).
 
-## [Ver projeto](./projeto)
+## [Ver projeto](./Projeto)
 
 ###  Autores
 
