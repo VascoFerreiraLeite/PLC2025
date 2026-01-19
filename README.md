@@ -1,6 +1,6 @@
 # Processamento de Linguagens e Compiladores (PLC)
 
-Repositório dedicado aos **Trabalhos De Casa (TPCs)** da unidade curricular de **Processamento de Linguagens e Compiladores**.  
+Repositório dedicado aos **Trabalhos De Casa (TPCs)** e ao projeto da unidade curricular de **Processamento de Linguagens e Compiladores**.  
 
 ---
 
